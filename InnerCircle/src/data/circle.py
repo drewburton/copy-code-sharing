@@ -40,8 +40,12 @@ def create(circle: Circle):
 def modify(circle: Circle):
     return circle
 
-def replace(circle: Circle):
-    return circle
+def replace(radius: float, circle: Circle):
+
+    delete(Circle(radius))
+
+    return create(circle)
+    
 
 def delete(circle: Circle):
     qry = "DELETE FROM circle WHERE radius=:radius"
