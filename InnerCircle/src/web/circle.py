@@ -17,9 +17,9 @@ def get_one(radius) -> Circle | None:
 def create(circle: Circle) -> Circle:
     return service.create(circle)
 
-@router.patch("/")
-def modify(circle: Circle) -> Circle:
-    return service.modify(circle)
+@router.patch("/{radius}")
+def modify(radius: float, circle: Circle) -> Circle:
+    return service.modify(radius, circle)
 
 @router.put("/")
 def replace(circle: Circle) -> Circle:

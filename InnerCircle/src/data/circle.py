@@ -39,7 +39,7 @@ def create(circle: Circle):
 
 def modify(radius: float, circle: Circle) -> Circle:
     qry = """update circle set
-             radius=:radius,
+             radius=:radius
              where radius=:orig_radius"""
     params = model_to_dict(circle)
     params["orig_radius"] = radius
